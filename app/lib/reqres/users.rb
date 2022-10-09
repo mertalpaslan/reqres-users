@@ -8,8 +8,10 @@ module Reqres
 
     def self.find(id)
       path = "users/#{id}"
+      response = call_api(path)
+      user = response.dig("data")
 
-      Reqres::User.new call_api(path)
+      Reqres::User.new(*user.values_at(*User.members.map(&:to_s)))
     end
 
     def self.call_api(path)

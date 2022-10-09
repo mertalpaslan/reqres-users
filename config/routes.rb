@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   root "homepage#index"
   post "/search", to: "homepage#search"
+  post "/details", to: "homepage#details"
 end

@@ -11,8 +11,7 @@ class HomepageController < ApplicationController
   end
 
   def details
-    @user = Reqres::Users.find(params[:id])
-
+    @user = Reqres::Users.find(params[:user_id])
     respond_to do |format|
       format.turbo_stream
     end
