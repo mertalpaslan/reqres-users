@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-6 text-center mb-4">
+			<h2 class="heading-section">Users</h2>
+		</div>
+	</div>
+	<div class="row">
+			<div class="input-group">
+				<input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
+			</div>
+		<div class="col-md-12">
+			<h3 class="h5 mb-4 text-center">Reqres Users</h3>
+			<div class="table-wrap">
+				<table class="table">
+					<thead class="thead-primary">
+						<tr>
+							<th>&nbsp;</th>
+							<th>Email</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @collection.users.each do |user| %>
+							<%= render 'user_item', user: user %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
