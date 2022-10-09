@@ -1,5 +1,8 @@
 module Reqres
   class UserCollection
+
+    include Paginatable
+
     User = Struct.new(:id, :email, :first_name, :last_name, :avatar)
 
     attr_accessor :page, :per_page, :total, :total_pages, :users
