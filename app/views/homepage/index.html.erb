@@ -8,6 +8,9 @@
 			<div class="input-group">
 				<input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
 			</div>
+		<%= form_with url: search_path, method: :post do |form| %>
+			<%= form.search_field :search, oninput: "this.form.requestSubmit()" %>
+		<% end %>
 		<div class="col-md-12">
 			<h3 class="h5 mb-4 text-center">Reqres Users</h3>
 			<div class="table-wrap">
@@ -21,27 +24,10 @@
 							<th>&nbsp;</th>
 						</tr>
 					</thead>
-					<tbody>
-						<% @collection.users.each do |user| %>
-							<%= render 'user_item', user: user %>
-						<% end %>
-					</tbody>
+					<%= render 'users/list', collection: @collection %>
 				</table>
-				<%== pagy_nav(@pagy) %>
 			</div>
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-end">
-					<li class="page-item disabled">
-						<a class="page-link" href="#" tabindex="-1">Previous</a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
+			<%= render 'shared/pagination', collection: @collection %>
 		</div>
 	</div>
 </div>

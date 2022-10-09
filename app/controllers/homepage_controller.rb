@@ -3,7 +3,18 @@ class HomepageController < ApplicationController
     @collection = Reqres::Users.all
   end
 
-  def users
-    
+  def search
+    @collection = Reqres::Users.all(per_page: params[:per_page], page: params[:page].to_i).search(params[:search])
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
+  def details
+    @user = Reqres::Users.find(params[:id])
+
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 end

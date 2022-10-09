@@ -1,0 +1,19 @@
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item <%= "disabled" if !collection.previous_page? %> %>">
+      <%= button_to 'Previous', search_path(page: collection.previous_page), method: :post, class: "page-link", remote: true %>
+    </li>
+    <li class="page-item <%= "disabled" if !collection.previous_page? %>">
+      <%= button_to 'First', search_path(page: 1), method: :post, class: "page-link", remote: true %>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#"><%= collection.page %> of <%= collection.total_pages %> <span class="sr-only"></span></a>
+    </li>
+    <li class="page-item <%= "disabled" if !collection.next_page? %> %>">
+      <%= button_to 'Next', search_path(page: collection.next_page), method: :post, class: "page-link", remote: true %>
+    </li>
+    <li class="page-item <%= "disabled" if !collection.next_page? %> %>">
+      <%= button_to 'Last', search_path(page: collection.total_pages), method: :post, class: "page-link", remote: true %>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,2 @@
+<%= turbo_stream.replace 'users_list', partial: 'users/list', locals: { collection: @collection } %>
+<%= turbo_stream.replace 'pagination', partial: 'shared/pagination', locals: { collection: @collection } %>

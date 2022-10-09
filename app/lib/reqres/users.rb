@@ -6,6 +6,12 @@ module Reqres
       Reqres::UserCollection.new call_api(path)
     end
 
+    def self.find(id)
+      path = "users/#{id}"
+
+      Reqres::User.new call_api(path)
+    end
+
     def self.call_api(path)
       url = REQRES_URL + path
 
