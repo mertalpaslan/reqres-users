@@ -1,0 +1,21 @@
+<div id="pagination_links">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item">
+          <%= button_to 'Previous', search_path(page: @collection.previous_page), method: :post, class: "page-link" + previous_page_class, remote: true %>
+        </li>
+        <li class="page-item">
+          <%= button_to 'First', search_path(page: 1), method: :post, class: "page-link" + previous_page_class, remote: true %>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="#"><%= @collection.page %> of <%= @collection.total_pages %> <span class="sr-only"></span></a>
+        </li>
+        <li class="page-item">
+          <%= button_to 'Next', search_path(page: @collection.next_page), method: :post, class: "page-link" + next_page_class, remote: true %>
+        </li>
+        <li class="page-item">
+          <%= button_to 'Last', search_path(page: @collection.total_pages), method: :post, class: "page-link" + next_page_class, remote: true %>
+        </li>
+      </ul>
+    </nav>
+</div>

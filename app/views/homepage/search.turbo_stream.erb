@@ -1,2 +1,2 @@
-<%= turbo_stream.replace 'users_list', partial: 'users/list', locals: { collection: @collection } %>
-<%= turbo_stream.replace 'pagination', partial: 'shared/pagination', locals: { collection: @collection } %>
+<%= turbo_stream.replace('users_list') { render User::ListComponent.new(collection: @collection) } %>
+<%= turbo_stream.replace('pagination_links') { render User::PaginationComponent.new(collection: @collection) } %>

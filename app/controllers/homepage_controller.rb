@@ -5,6 +5,7 @@ class HomepageController < ApplicationController
 
   def search
     @collection = Reqres::Users.all(per_page: params[:per_page], page: params[:page].to_i).search(params[:search])
+
     respond_to do |format|
       format.turbo_stream
     end

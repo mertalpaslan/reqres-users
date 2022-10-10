@@ -23,10 +23,10 @@
 							<th>&nbsp;</th>
 						</tr>
 					</thead>
-					<%= render 'users/list', collection: @collection %>
+					<%= render User::ListComponent.new(collection: @collection) %>
 				</table>
 			</div>
-			<%= render 'shared/pagination', collection: @collection %>
+			<%= render(User::PaginationComponent.new(collection: @collection)) %>
 		</div>
 	</div>
 </div>
