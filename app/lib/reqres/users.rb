@@ -17,7 +17,9 @@ module Reqres
     def self.call_api(path)
       url = REQRES_URL + path
 
-      HTTParty.get(url)
+      Rails.cache.fetch(["users", path], expires_in: 1.minutes) do
+        HTTParty.get(url)
+      end
     end
   end
 end
