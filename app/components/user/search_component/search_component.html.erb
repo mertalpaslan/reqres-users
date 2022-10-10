@@ -1,0 +1,5 @@
+<div id="search-field">
+  <%= form_with url: search_path(page: @page), method: :post do |form| %>
+    <%= form.search_field :search, oninput: "this.form.requestSubmit()" %>
+  <% end %>
+</div>
