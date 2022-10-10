@@ -10,6 +10,6 @@
   <td><%= user.first_name %></td>
   <td><%= user.last_name%></td>
   <td>
-    <%= button_to 'Last', details_path(user_id: user.id), method: :post, remote: true %>
+    <%= button_to 'Details', details_path(user_id: user.id), class: "btn btn-primary", method: :post, remote: true %>
   </td>
 </tr>

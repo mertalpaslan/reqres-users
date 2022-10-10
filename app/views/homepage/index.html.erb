@@ -1,18 +1,17 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-6 text-center mb-4">
-			<h2 class="heading-section">Users</h2>
+			<h2 class="heading-section">Reqres Users</h2>
 		</div>
 	</div>
-	<div class="row">
-			<div class="input-group">
-				<input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
-			</div>
-		<%= form_with url: search_path, method: :post do |form| %>
-			<%= form.search_field :search, oninput: "this.form.requestSubmit()" %>
-		<% end %>
+	<div id="users-table">
+		<div class="float-right">
+			<%= form_with url: search_path, method: :post do |form| %>
+				<%= form.search_field :search, oninput: "this.form.requestSubmit()" %>
+			<% end %>
+		</div>
 		<div class="col-md-12">
-			<h3 class="h5 mb-4 text-center">Reqres Users</h3>
+			<h3 class="h5 mb-4 text-center">All Users</h3>
 			<div class="table-wrap">
 				<table class="table">
 					<thead class="thead-primary">
