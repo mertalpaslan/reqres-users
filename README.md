@@ -1,24 +1,7 @@
-# README
+# Reqres Users
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A single page rails application that lists user records from [Reqres](https://reqres.in/), using TurboStream and ViewComponent.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `Ruby`  ->  `3.1.1`  
+- `Rails`  -> `7.0.4`  
+  
